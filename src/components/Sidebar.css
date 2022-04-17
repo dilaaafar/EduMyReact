@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,700;0,900;1,500&display=swap');
+
+.sidebar {
+    width: 300px;
+    min-width: 300px;
+    background: var(--primary-color);
+    min-height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+    color: #fff
+  }
+  .sidebar-content {
+    position: fixed;
+    margin-top: 30px;
+    margin-left: 90px;
+    margin-right: 90px;
+    /* margin-bottom: 30px; */
+    color: #FFECD8;
+  }
+  .sidebar-content .sidebar-tajuk {
+    font-family: Nunito;
+    font-size: 40px;
+    font-weight: bold;
+    color: #000;
+  }
+  .sidebar .user {
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+    padding: 40px 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+  .sidebar .links {
+    margin-top: 300px;
+    margin-left: 20px;
+  }
+  .sidebar .links li {
+    position:center;
+    margin-top: 30px;
+    margin-left:30px;
+  }
+  .sidebar .links a {
+    margin-top: 10px;
+    display: flex;
+    padding: 10px;
+    text-decoration: none;
+    width: 100%;
+    color: #fff;
+    box-sizing: border-box;
+  }
+  .sidebar .links img {
+    margin-right: 10px;
+    filter: invert(100%);
+  }
+  .sidebar .links a.active {
+    color: #555;
+    /* background: var(--bg-color); */
+    border-radius: 20px 0 0 20px;
+  }
+  .sidebar .links .active img {
+    filter: invert(40%);
+  }
+  
