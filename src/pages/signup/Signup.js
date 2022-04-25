@@ -1,22 +1,30 @@
-import {useState} from 'react'
+import { useState, useEffect } from 'react'
 import { useSignup } from '../../hooks/useSignup'
+import Select from 'react-select'
 //styles
 import './Signup.css'
 
+const roles_ = [
+  {value: 'teacher', label: 'Teacher'},
+  {value: 'student', label: 'Student'},
+]
+
 export default function Signup() {
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [cpassword, setConfirmPassword] = useState('')
-  const [username, setuserName] = useState('')
+  const [displayName, setDisplayName] = useState('')
   const [icnumber, setICnumber] = useState('')
+  const [roles, setRoles] = useState('')
   const [thumbnail, setThumbnail] = useState('')
   const [thumbnailError, setThumbnailError] = useState(null)
+
   const { signup, isPending, error } = useSignup()
-
-
+  
   const handleSubmit = (e) => {
     e.preventDefault()
-    signup(email, password, cpassword, username, icnumber, thumbnail)   
+    signup(email, password, cpassword, displayName, icnumber, thumbnail, roles.value) 
     // make sure the order of the element match 
     //the order of element in useSignup.js
   }
@@ -77,8 +85,8 @@ export default function Signup() {
           <input 
             required 
             type="text"
-            onChange={(e) => setuserName(e.target.value)}
-            value={username}
+            onChange={(e) => setDisplayName(e.target.value)}
+            value={displayName}
           />
         </label>
         <label>
@@ -98,6 +106,12 @@ export default function Signup() {
             onChange={handleFileChange}
           />
           {thumbnailError && <div className="error">{thumbnailError}</div>}
+        </label>
+        <label className="roles">
+          <span>roles:</span>
+          <Select
+            onChange={(option) => setRoles(option)}
+            options={roles_}/>
         </label>
         {!isPending && <button className="btn">Sign Up</button>}
         {isPending && <button className="btn" disabled>loading</button>}

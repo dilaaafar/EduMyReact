@@ -65,6 +65,10 @@ input, textarea {
 textarea {
   min-height: 160px;
 }
+
+.radio{
+  margin-left: 100px;
+}
 .error {
   color: red;
   background: pink;

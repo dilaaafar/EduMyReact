@@ -8,3 +8,12 @@
     padding-bottom: 70px;
     border-radius: 18px;
   }
+
+ .optroles {
+  width: 360px;
+  padding: 9px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: 'Nunito';
+  font-size: large;
+ }

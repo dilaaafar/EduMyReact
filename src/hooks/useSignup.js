@@ -8,7 +8,7 @@ export const useSignup = () => {
   const [isPending, setIsPending] = useState(false)
   const { dispatch } = useAuthContext()
 
-  const signup = async (email, password, cpassword, username, icnumber, thumbnail) => {
+  const signup = async (email, password, cpassword, displayName, icnumber, thumbnail, roles) => {
     setError(null)
     setIsPending(true)
   
@@ -20,19 +20,20 @@ export const useSignup = () => {
         throw new Error('Could not complete signup')
       }
 
-      //upload user thmbnail 
-      const uploadPath = `thumbnails/${res.user.uid}/${thumbnail.name}`
+      //upload user thumbnail 
+      const uploadPath = `thumbnails/$ {res.user.uid}/${thumbnail.name}`
       const img = await projectStorage.ref(uploadPath).put(thumbnail)
       const imgUrl = await img.ref.getDownloadURL()
 
       // add username to user
-      await res.user.updateProfile({ username, photoURL: imgUrl })
+      await res.user.updateProfile({ displayName, photoURL: imgUrl })
 
       // create a user document
       await projectFirestore.collection('users').doc(res.user.uid).set({
         online: true,
-        username,
-        photoURL:imgUrl
+        displayName,
+        photoURL:imgUrl,
+        roles
       })
 
       // dispatch login action
