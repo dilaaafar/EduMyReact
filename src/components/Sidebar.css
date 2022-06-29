@@ -7,7 +7,7 @@
     min-height: 100vh;
     box-sizing: border-box;
     position: relative;
-    color: #fff
+    color: #000
   }
   .sidebar-content {
     position: fixed;
@@ -23,12 +23,13 @@
     font-weight: bold;
     color: #000;
   }
-  .sidebar .user {
+  .sidebar-content .user {
     font-weight: bold;
     text-align: center;
     letter-spacing: 1px;
     padding: 40px 30px;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(3, 3, 3, 0.2);
+    color: #000;
   }
   .sidebar .links {
     margin-top: 300px;
@@ -45,12 +46,20 @@
     padding: 10px;
     text-decoration: none;
     width: 100%;
-    color: #fff;
+    color: rgb(10, 10, 10);
     box-sizing: border-box;
   }
   .sidebar .links img {
     margin-right: 10px;
     filter: invert(100%);
+  }
+  .sidebar .links a:hover {
+    background-color: #f8d1ac;
+    color: #000;
+  }
+
+  .sidebar .links a .img {
+    color: #000;
   }
   .sidebar .links a.active {
     color: #555;

@@ -36,8 +36,11 @@ export default function Login() {
             value={password}
           />
         </label>
-        {!isPending && <button className="btn">Login</button>}
-        {isPending && <button className="btn" disabled>loading</button>}
+        
+        <div>
+          {!isPending && <button className="btn">Login</button>}
+          {isPending && <button className="btn" disabled>loading</button>}
+        </div>
         {error && <div className="error">{error}</div>}
     </form>
   )

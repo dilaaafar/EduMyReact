@@ -1,7 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import Avatar from './Avatar'
 import { useAuthContext } from '../hooks/useAuthContext'
-//import { useCollection } from '../hooks/useCollection'
 import { projectFirestore } from "../firebase/config"
 
 //style & images
@@ -11,9 +10,18 @@ import SubjectIcon from '../assets/book.svg'
 import QuizIcon from '../assets/quiz.svg'
 import AttendanceIcon from '../assets/calendar.svg'
 
-export default function Sidebar() {
+export default function TeacherSidebar() {
 
 const { user } = useAuthContext()
+/* const [users, setUsers] = useState(null)
+useEffect(() => {
+    setIsPending (true)
+
+        projectFirestore.collection('users').doc(id).get().then((doc) =>{
+        console.log(doc)
+        })
+
+}, []) */
 
   return (
     <div className="sidebar">
@@ -31,15 +39,9 @@ const { user } = useAuthContext()
         <nav className="links">
             <ul>
                 <li>
-                    <NavLink to="/my-class">
-                        <img src={SubjectIcon} alt="subject icon" />
-                        <span>My Class</span>
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="/quiz">
-                        <img src={QuizIcon} alt="quiz icon" />
-                        <span>Quiz</span>
+                    <NavLink exact to="/">
+                        <img src={DashboardIcon} alt="dashboard icon" />
+                        <span>Home</span>
                     </NavLink>
                 </li>
                 <li>
@@ -51,7 +53,7 @@ const { user } = useAuthContext()
                 <li>
                     <NavLink to="/tcrquiz">
                         <img src={QuizIcon} alt="quiz icon" />
-                        <span>Create Quiz</span>
+                        <span>Teacher Quiz</span>
                     </NavLink>
                 </li>
                 <li>
