@@ -1,4 +1,5 @@
 import React from 'react'
+<<<<<<< HEAD
 import { Link } from 'react-router-dom'
 
 export default function TeacherQuiz({quizzes}) {
@@ -24,3 +25,12 @@ export default function TeacherQuiz({quizzes}) {
     
   )
 }
+=======
+
+export default function TeacherQuiz() {
+  return (
+    <div>Teacher Quiz</div>
+    
+  )
+}
+>>>>>>> a6925a045c5753b9179939f969eae6b6f81d5a07

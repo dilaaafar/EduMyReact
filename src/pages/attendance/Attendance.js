@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, {useState} from "react"
 import DatePicker from 'react-date-picker'
 import { Link } from "react-router-dom";
@@ -57,5 +58,23 @@ const toggleModal = () => {
 
         
     </div>
+=======
+import Modal from './modal/Modal.js';
+import React from 'react';
+
+//styles
+import './Attendance.css'
+
+export default function Attendance() {
+
+
+  return (
+    <div>
+      <Modal />
+    </div>
+
+
+    
+>>>>>>> a6925a045c5753b9179939f969eae6b6f81d5a07
   )
 }

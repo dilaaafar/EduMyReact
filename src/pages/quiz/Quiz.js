@@ -1,4 +1,5 @@
 import React from 'react'
+<<<<<<< HEAD
 import QuestionList from '../../components/QuestionList'
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid"
@@ -71,3 +72,11 @@ export default function Quiz() {
     </div>
   );
 };
+=======
+
+export default function Quiz() {
+  return (
+    <div>Quiz</div>
+  )
+}
+>>>>>>> a6925a045c5753b9179939f969eae6b6f81d5a07

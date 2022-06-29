@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 import {useRef, useState, useEffect } from 'react'
 import { useSignup } from '../../hooks/useSignup'
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { projectFirestore } from '../../firebase/config'
+=======
+import { useState, useEffect } from 'react'
+import { useSignup } from '../../hooks/useSignup'
+>>>>>>> a6925a045c5753b9179939f969eae6b6f81d5a07
 import Select from 'react-select'
 //styles
 import './Signup.css'
@@ -15,8 +20,14 @@ const roles_ = [
 
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%_]).{8,24}$/;
 
+const roles_ = [
+  {value: 'teacher', label: 'Teacher'},
+  {value: 'student', label: 'Student'},
+]
+
 export default function Signup() {
 
+<<<<<<< HEAD
   const userRef = useRef();
 
   const [email, setEmail] = useState('')
@@ -70,6 +81,22 @@ export default function Signup() {
           })
     }, [user])*/}
     
+=======
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [cpassword, setConfirmPassword] = useState('')
+  const [displayName, setDisplayName] = useState('')
+  const [icnumber, setICnumber] = useState('')
+  const [roles, setRoles] = useState('')
+  const [thumbnail, setThumbnail] = useState('')
+  const [thumbnailError, setThumbnailError] = useState(null)
+
+  const { signup, isPending, error } = useSignup()
+  
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    signup(email, password, cpassword, displayName, icnumber, thumbnail, roles.value) 
+>>>>>>> a6925a045c5753b9179939f969eae6b6f81d5a07
     // make sure the order of the element match 
     //the order of element in useSignup.js
   }
