@@ -9,11 +9,7 @@ export const useSignup = () => {
   const [isPending, setIsPending] = useState(false)
   const { dispatch } = useAuthContext()
 
-<<<<<<< HEAD
   const signup = async (email, password, confirmPassword, displayName, subject, thumbnail, roles) => {
-=======
-  const signup = async (email, password, cpassword, displayName, icnumber, thumbnail, roles) => {
->>>>>>> a6925a045c5753b9179939f969eae6b6f81d5a07
     setError(null)
     setIsPending(true)
   
@@ -28,11 +24,7 @@ export const useSignup = () => {
       }
 
       //upload user thumbnail 
-<<<<<<< HEAD
       const uploadPath = `thumbnails/${res.user.uid}/${thumbnail.name}`
-=======
-      const uploadPath = `thumbnails/$ {res.user.uid}/${thumbnail.name}`
->>>>>>> a6925a045c5753b9179939f969eae6b6f81d5a07
       const img = await projectStorage.ref(uploadPath).put(thumbnail)
       const imgUrl = await img.ref.getDownloadURL()
 
@@ -46,10 +38,7 @@ export const useSignup = () => {
         online: true,
         displayName,
         photoURL:imgUrl,
-<<<<<<< HEAD
         subject,
-=======
->>>>>>> a6925a045c5753b9179939f969eae6b6f81d5a07
         roles
       })
 

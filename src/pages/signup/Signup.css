@@ -5,9 +5,16 @@
     border: 1px solid #ddd;
     box-shadow: 3px 3px 5px rgba(0,0,0,0.05);
     background: #fff;
-    padding-bottom: 70px;
+    padding-bottom: 90px;
     border-radius: 18px;
+    margin-bottom: 30px;
   }
+
+.redbox{
+  border-color: red;
+  border-width: 2px;
+  color: red;
+}
 
  .optroles {
   width: 360px;
@@ -16,7 +23,6 @@
   border-radius: 5px;
   font-family: 'Nunito';
   font-size: large;
-<<<<<<< HEAD
  }
 
  section {
@@ -75,6 +81,3 @@ button {
   justify-content: flex-start;
   align-items: flex-end;
 }
-=======
- }
->>>>>>> a6925a045c5753b9179939f969eae6b6f81d5a07

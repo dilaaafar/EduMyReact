@@ -13,6 +13,7 @@ export default function Navbar() {
       <ul>
         {!user && (
           <>
+            <li className='TitleSite'>EduMy</li>
             <li><Link to="/login">Login</Link></li>
             <li><Link to="/signup">Signup</Link></li>
           </>

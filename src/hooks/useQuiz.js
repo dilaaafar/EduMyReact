@@ -3,15 +3,30 @@ import { projectAuth, projectStorage, projectFirestore } from '../firebase/confi
 import { useState, useEffect } from 'react'
 import '../firebase/config'
 
-{/*export const useQuiz = () => {
+export const useQuiz = () => {
+
   const [isCancelled, setIsCancelled] = useState(false)
+  const [error, setError] = useState(null)
+  const [isPending, setIsPending] = useState(false)
 
     const createQuiz = async (currentQuizId, subject, title, description) => {
-      await projectFirestore().collection('quizzes').doc(currentQuizId).set({
+      setError(null)
+      setIsPending(true)
+
+      try{
+        await projectFirestore.collection('Quizzes').doc(currentQuizId).set({
         subject,
         title,
         description,
       });
+
+      }
+      catch(err) {
+        if (!isCancelled) {
+          setError(err.message)
+          setIsPending(false)
+        }
+      }
 
     }
 
@@ -20,10 +35,10 @@ useEffect(() => {
   return () => setIsCancelled(true)
   }, [])
 
-  return {createQuiz}
-}*/}
+  return {createQuiz, error, isPending}
+}
 
-export const createQuiz = (currentQuizId, subject, title, description) => {
+{/*export const createQuiz = (currentQuizId, subject, title, description) => {
   return projectFirestore().collection('Quizzes').doc(currentQuizId).set({
     title,
     description,
@@ -57,4 +72,4 @@ export const createQuiz = (currentQuizId, subject, title, description) => {
       .doc(currentQuizId)
       .collection('QNA')
       .get();
-}
+}*/}

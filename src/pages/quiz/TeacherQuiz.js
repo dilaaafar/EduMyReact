@@ -1,15 +1,15 @@
 import React from 'react'
-<<<<<<< HEAD
 import { Link } from 'react-router-dom'
 
 export default function TeacherQuiz({quizzes}) {
 
 
   return (
-    <div>Teacher Quiz
+    <div>
+      <h1>Create Quiz</h1>
       <div>
         <Link to="./create-quiz ">
-        <button className='btn'> + Create Quiz</button>
+        <button className='btn'> + Start Create</button>
       </Link>
       </div>
       
@@ -25,12 +25,3 @@ export default function TeacherQuiz({quizzes}) {
     
   )
 }
-=======
-
-export default function TeacherQuiz() {
-  return (
-    <div>Teacher Quiz</div>
-    
-  )
-}
->>>>>>> a6925a045c5753b9179939f969eae6b6f81d5a07

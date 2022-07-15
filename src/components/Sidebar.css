@@ -7,10 +7,6 @@
     min-height: 100vh;
     box-sizing: border-box;
     position: relative;
-<<<<<<< HEAD
-=======
-    
->>>>>>> a6925a045c5753b9179939f969eae6b6f81d5a07
     color: #000
   }
   .sidebar.sidebar-content {
@@ -31,11 +27,8 @@
     font-weight: bold;
     text-align: center;
     letter-spacing: 1px;
-<<<<<<< HEAD
     padding: 40px 30px;
     border-bottom: 1px solid rgba(3, 3, 3, 0.2);
-=======
->>>>>>> a6925a045c5753b9179939f969eae6b6f81d5a07
     color: #000;
   }
   .sidebar .links {

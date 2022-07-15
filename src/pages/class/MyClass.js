@@ -9,6 +9,7 @@ import { projectFirestore } from '../../firebase/config'
 import ModalClass from './ModalClass'
 import ClassList from '../../components/ClassList'
 import ClassListTcr from '../../components/ClassListTcr'
+import {Carousel} from 'react-responsive-carousel'
 
 export default function MyClass({classes}) {
 
@@ -49,9 +50,10 @@ export default function MyClass({classes}) {
   }, [])
 
   return (
+
     <div>
       <h2 className='class-title'>My Class</h2>
-      
+      <Carousel/>
       {error && <p className='error'>{error}</p>}
       {isPending && <p className='loading'>Loading...</p>}
       {data && <ClassList classes={data} style={customStyles}/>}

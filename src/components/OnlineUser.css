@@ -4,6 +4,7 @@
     padding: 30px;
     box-sizing: border-box;
     background: #fbfbfb;
+    min-height: 100vh;
     color: var(--heading-color);
     
   }

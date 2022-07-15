@@ -12,7 +12,7 @@ export const CreateQuiz = () => {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
 
-    //const {createQuiz} = createQuiz()
+    const {createQuiz, isPending, error} = useQuiz()
 
     const handleSubmit = async (e) => {
         const currentQuizId = Math.floor(100000 + Math.random() * 9000).toString();
@@ -20,6 +20,7 @@ export const CreateQuiz = () => {
         e.preventDefault();
         //save to projectFirestore
         createQuiz(currentQuizId, subject_, title, description)
+        console.log(createQuiz)
 
         //navigate to add question string
        {/* navigation.navigate("AddQuestion",{
@@ -35,7 +36,7 @@ export const CreateQuiz = () => {
     
   return (
     <div className='add-quiz'>
-      Create Quiz
+      <h1>Create Quiz</h1>
       <div className='container'>
         <form className='quiz-form' onSubmit={handleSubmit}>
           <label>

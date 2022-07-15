@@ -85,7 +85,6 @@ const handleSubmit = async (e) => {
       //assignedUsersList,
       uID: user.uid
   }
- 
 
   const toggleModal = () => {
     setModal(!modal)
@@ -94,8 +93,9 @@ const handleSubmit = async (e) => {
     return (
     <div>
         <button 
+        
         onClick={toggleModal}
-        className="btn-modal">
+        className="btn-modal-1">
             + Create Class
         </button>
 

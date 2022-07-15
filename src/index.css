@@ -4,9 +4,18 @@
 :root {
   --heading-color: #444;
   --text-color: #000;
-  --primary-color: #FFE6CC;
-  --highlight-color: #d13267;
-  --bg-color: #f4f4f4;
+  --primary-color: #f1c494;
+  --highlight-color: #caa370;
+/*   --bg-color: #f4f4f4;*/
+  background-image: linear-gradient(0deg, #e0d7cc, #f0f0f0);
+}
+
+.lottie{
+  position: absolute;
+  height: 250;
+  right:18%;
+  bottom: 0%;
+
 }
 
 /* base styles */
@@ -15,6 +24,10 @@ body {
   margin: 0;
   font-size: 1.1em;
   background: var(--bg-color);
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position-x: center;
+
 }
 ul, li, p, h1, h2, h3, h4 {
   margin: 0;
@@ -24,24 +37,35 @@ ul {
   list-style-type: none;
 }
 
+.class-title{
+  padding-bottom: 30px;
+}
+
+.btn-modal{
+  margin:0px;
+  padding: 0px;
+}
+
 /* layout */
 .page-title {
+  padding:50px;
+  background-color: #ffffff;
   font-size: 1em;
   color: var(--heading-color);
   display: inline-block;
 }
 .btn {
-  background: #fff;
+  background: #FFECD8;
   padding: 8px 12px;
   border-radius: 4px;
-  color: var(--primary-color);
+  color: var(--text-color);
   cursor: pointer;
   font-size: 1em;
   border: 1px solid var(--primary-color);
 }
 .btn:hover {
   color: #fff;
-  background-color: var(--primary-color);
+  background-color: var(--highlight-color);
 }
 
 /* forms */
@@ -76,4 +100,8 @@ textarea {
   border-radius: 4px;
   padding: 8px;
   margin: 10px 0;
+}
+
+.file-upload{
+  margin-top: 0%;
 }

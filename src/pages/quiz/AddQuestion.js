@@ -1,17 +1,16 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 import {useQuiz, createQuestion} from '../../hooks/useQuiz'
+import { useAddQuiz } from '../../hooks/useAddQuiz'
 import { useState } from 'react'
+import { useParams } from 'react-router-dom'
 import { projectStorage, projectFirestore } from '../../firebase/config'
 
 export default function AddQuestion({navigation, route}) {
 
-  const [currentQuizId, setCurrentQuizId] = useState(
-    route.params.currentQuizId,
-  );
-  const [currentQuizTitle, setCurrentQuizTitle] = useState(
-    route.params.currentQuizTitle,
-  );
+  const [currentQuizId, setCurrentQuizId] = useState('');
+  const [currentQuizTitle, setCurrentQuizTitle] = useState('');
+  const [currentQuestionId, setCurrentQuestionId] = useState('');
 
   const [question, setQuestion] = useState('');
   const [imageUri, setImageUri] = useState('');
@@ -22,6 +21,8 @@ export default function AddQuestion({navigation, route}) {
   const [optionFour, setOptionFour] = useState('');
 
   //const {useQuiz} = createQuestion()
+
+  const {addQuiz, isPending, error } = useAddQuiz()
 
   const handleQuestionSave = async () => {
     if (
@@ -50,7 +51,7 @@ export default function AddQuestion({navigation, route}) {
       imageUrl = await reference.getDownloadURL();
     }
 
-    await createQuestion(currentQuizId, currentQuestionId, {
+    await addQuiz(currentQuizId, currentQuestionId, {
       question: question,
       correct_answer: correctAnswer,
       incorrect_answers: [optionTwo, optionThree, optionFour],
@@ -65,9 +66,54 @@ export default function AddQuestion({navigation, route}) {
     setImageUri('');
   };
 
-  return (
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addQuiz(currentQuizId, currentQuestionId, question, correctAnswer, optionTwo, optionThree, optionFour)
+    console.log(addQuiz)
+  }
+   return (
     <div>
-      AddQuestion
+      <form className='auth-form' onSubmit={handleSubmit}>
+        <label>
+          <span>Question: </span>
+          <input
+            required
+            type="text"
+            onChange={(e) => setQuestion(e.target.value)}/>
+        </label>
+        <label>
+          <span>Correct Answer: </span>
+          <input
+            required
+            type="text"
+            onChange={(e) => setCorrectAnswer(e.target.value)}/>
+        </label>
+        <label>
+          <span>Option 2:</span>
+          <input
+            required
+            type="text"
+            onChange={(e) => setOptionTwo(e.target.value)}/>
+        </label>
+        <label>
+          <span>Option 3:</span>
+          <input
+            required
+            type="text"
+            onChange={(e) => setOptionThree(e.target.value)}/>
+        </label>
+        <label>
+          <span>Option 3:</span>
+          <input
+            required
+            type="text"
+            onChange={(e) => setOptionFour(e.target.value)}/>
+        </label>
+        {!isPending && <button className="btn">Save Quiz</button>}
+        {isPending && <button className="btn" disabled>loading</button>}
+        {error && <div className="error">{error}</div>}
+        {console.log()}
+      </form>
     </div>
   )
 }

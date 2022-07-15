@@ -12,26 +12,19 @@
     "firebase": "8.5",
     "react": "^18.0.0",
     "react-button": "^1.2.1",
-<<<<<<< HEAD
     "react-date-picker": "^8.4.0",
     "react-dom": "^18.0.0",
     "react-hook-use-state": "^1.1.0",
     "react-icons": "^4.3.1",
+    "react-lottie": "^1.2.3",
     "react-redux": "^8.0.2",
-=======
-    "react-dom": "^18.0.0",
-    "react-hook-use-state": "^1.1.0",
-    "react-icons": "^4.3.1",
->>>>>>> a6925a045c5753b9179939f969eae6b6f81d5a07
+    "react-responsive-carousel": "^3.2.23",
     "react-router": "^6.3.0",
     "react-router-dom": "5.2",
     "react-scripts": "5.0.1",
     "react-select": "^5.3.0",
     "reactjs-popup": "^2.0.5",
-<<<<<<< HEAD
     "uuid": "^8.3.2",
-=======
->>>>>>> a6925a045c5753b9179939f969eae6b6f81d5a07
     "web-vitals": "^2.1.4"
   },
   "scripts": {

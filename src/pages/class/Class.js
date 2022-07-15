@@ -7,8 +7,6 @@ import './Class.css'
 import { useAuthContext } from '../../hooks/useAuthContext'
 import { projectFirestore } from '../../firebase/config'
 import ModalClass from './ModalClass'
-import ClassList from '../../components/ClassList'
-import PageClassStud from './PageClassStud'
 import ClassListTcr from '../../components/ClassListTcr'
 
 export default function Class({ classes }) {

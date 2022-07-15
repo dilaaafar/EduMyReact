@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+.TitleSite{
+  align-items: left;
+  margin-right:85%;
+  font-weight: bold;
+  font-size: 30px;
+}
+
 .navbar {
     width: 100%;
     padding: 30px 0;
     box-sizing: border-box;
-    margin-bottom: 80px;
   }
   .navbar ul {
     display: flex;

@@ -1,5 +1,4 @@
 import React from 'react'
-<<<<<<< HEAD
 import QuestionList from '../../components/QuestionList'
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid"
@@ -31,10 +30,11 @@ export default function Quiz() {
   }
 
   return (
+    <div><h1 className='title'>Mock Quiz</h1>
     <div className='quiz-wrapper'>
       {showScore ? (
         <div>
-          <div className="completed">Completed</div>
+          <div className="completed">Status: Completed</div>
           <div className="score-section">
             Your Score : {score}/{QuestionList.length}
           </div>
@@ -62,7 +62,7 @@ export default function Quiz() {
                 ))}
             </div>
         <div>
-          <button className='next-button' 
+          <button className='btn' 
             onClick={handleNextQuestion} disabled={!clicked}>
               Next
           </button>
@@ -70,13 +70,6 @@ export default function Quiz() {
       </div>  
       )}
     </div>
+    </div>
   );
 };
-=======
-
-export default function Quiz() {
-  return (
-    <div>Quiz</div>
-  )
-}
->>>>>>> a6925a045c5753b9179939f969eae6b6f81d5a07

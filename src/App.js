@@ -1,12 +1,11 @@
 import { BrowserRouter,Route,Switch, Redirect } from 'react-router-dom';
 import { useAuthContext } from './hooks/useAuthContext';
+import Lottie from 'react-lottie';
+import animationData from './assets/star.json';
 
 
-<<<<<<< HEAD
 import './App.css'
 
-=======
->>>>>>> a6925a045c5753b9179939f969eae6b6f81d5a07
 //pages and component
 import Dashboard from './pages/dashboard/Dashboard'
 import Assignment from './pages/assignment/Assignment'
@@ -15,7 +14,6 @@ import Signup from './pages/signup/Signup'
 import Class from './pages/class/Class'
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
-<<<<<<< HEAD
 import TeacherSidebar from './components/TeacherSidebar';
 import OnlineUser from './components/OnlineUser';
 import Quiz from './pages/quiz/Quiz'
@@ -28,19 +26,32 @@ import CreateQuiz from './pages/quiz/CreateQuiz';
 import AddQuestion from './pages/quiz/AddQuestion'
 import ClassListTcr from './components/ClassListTcr';
 import PageClassTcr from './pages/class/PageClassTcr';
+import ToQuiz from './pages/quiz/ToQuiz';
 
-=======
-import Quiz from './pages/quiz/Quiz'
-import TeacherQuiz from './pages/quiz/TeacherQuiz'
-import Attendance from './pages/attendance/Attendance'
-/* import { Routes } from 'react-router-dom'; */
->>>>>>> a6925a045c5753b9179939f969eae6b6f81d5a07
 
 function App() {
   const { user, authIsReady } = useAuthContext()
   
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice"
+    }
+  };
+
+
   return (
     <div className="App">
+
+        <div className='lottie'>
+          <Lottie 
+            options={defaultOptions}
+            height={400}
+          /> 
+        </div>
+
       {authIsReady && (
         <BrowserRouter>
         {user && <Sidebar />}
@@ -49,25 +60,19 @@ function App() {
             <Switch>
               <Route exact path="/">
                 {!user && <Redirect to ="/login" />}
-<<<<<<< HEAD
                 {user && <MyClass />}
-=======
-                {user && <Dashboard />}
->>>>>>> a6925a045c5753b9179939f969eae6b6f81d5a07
               </Route>
               <Route exact path='/quiz'>
               {!user && <Redirect to ="/login" />}
               {user && <Quiz />}
               </Route>
-<<<<<<< HEAD
+              <Route path='/to-quiz'>
+                {!user && <Redirect to ="/login" />}
+                {user && <ToQuiz />}
+              </Route>
               <Route path='/class'>
                 {!user && <Redirect to ="/login" />}
                 {user && <Class />}
-=======
-              <Route exact path='/subject'>
-              {!user && <Redirect to ="/login" />}
-              {user && <Subject/>}
->>>>>>> a6925a045c5753b9179939f969eae6b6f81d5a07
               </Route>
               <Route exact path='/login'>
                 {user && <Redirect to="/" />}
@@ -85,7 +90,6 @@ function App() {
                 {!user && <Redirect to='/login'/>}
                 {user && <Attendance />}
               </Route>
-<<<<<<< HEAD
               <Route path='/my-class'>
                 {!user && <Redirect to='/login'/>}
                 {user && <MyClass />}
@@ -106,15 +110,6 @@ function App() {
                 {!user && <Redirect to ="/login" />}
                 {user && <AddQuestion />}
               </Route>
-=======
-              <Route exact path="/" component={Dashboard} />
-              <Route path="/subject" component={Subject} />
-              <Route path="/quiz" component={Quiz} />
-              <Route path="/tcrquiz" component={TeacherQuiz} />
-              <Route path="/attendance" component={Attendance} />
-            </Switch>
-          </div> 
->>>>>>> a6925a045c5753b9179939f969eae6b6f81d5a07
 
               <Route exact path="/" component={Dashboard} />
               <Route path="/class" component={Class} />
@@ -127,6 +122,7 @@ function App() {
               <Route path="/create-quiz" component={CreateQuiz} />
               <Route path="/add-question" component={AddQuestion} />
               <Route path='/class-list-tcr/:id' component={ClassListTcr}/>
+              <Route path='/to-quiz' component={ToQuiz}/>
             </Switch>
           </div>
           {/* <div>{user && <OnlineUser/>}</div>*/}
